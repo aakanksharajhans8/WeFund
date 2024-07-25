@@ -18,7 +18,6 @@
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent box */
   /* box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); Blue shadow */
   padding: 2rem;
-  margin-top :50px;
   margin-bottom :40px;
   border-radius: 8px;
   width: 100%;
