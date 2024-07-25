@@ -45,8 +45,8 @@
   }
 
   function handleContinue() {
-      showVerified = false;
-      goto(`/select_contract`);
+    showVerified = false
+    goto(`/select_contract`);
   }
 </script>
 
