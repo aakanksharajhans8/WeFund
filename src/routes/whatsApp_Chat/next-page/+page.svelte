@@ -4,6 +4,10 @@
 function handleClick() {
     goto("/whatsApp_Chat");
 }
+
+function handleViewContact(){
+  goto("/contract_detail");
+}
 </script>
 
 <div class="content-container">
@@ -103,7 +107,7 @@ function handleClick() {
       </div>
     </div>
     <div class="miniDiv2">
-      <button class="button">
+      <button class="button" on:click={handleViewContact}>
         <div class="contractButton">
           View Contract
           <svg
