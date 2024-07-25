@@ -19,8 +19,14 @@
       console.log('Group name:', groupName);
       console.log('Group description:', groupDescription);
       console.log('Group PFP:', groupPfp);
-      // Replace this with your actual group creation logic
-      goto('/whatsApp_Chat');
+
+
+    // Store the data in localStorage
+    localStorage.setItem('selectedNames', JSON.stringify(selectedNames));
+    localStorage.setItem('groupName', groupName);
+
+    // Navigate to the whatsApp_Chat page
+    window.location.href = '/whatsApp_Chat';
     }
 
 
@@ -40,7 +46,8 @@
     .container {
       display: flex;
       justify-content: center;
-      align-items: center;
+      margin: auto;
+      /* align-items: center; */
       height: 120vh;
       /* background-color: #f0f4f8; */
     }
@@ -71,7 +78,7 @@
   
   <div class="container">
     <div class="form-box">
-      <h1 class="text-2xl font-bold mb-4">Create Group</h1>
+      <h1 class="text-2xl font-bold mb-4 text-center">Create Group</h1>
       <div class="flex justify-center mb-4">
         <img src={groupPfp} alt="Group Profile Picture" />
       </div>

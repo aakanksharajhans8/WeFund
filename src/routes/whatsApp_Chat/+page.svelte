@@ -1,8 +1,19 @@
 <script>
     import { goto } from "$app/navigation";
+    import { onMount } from 'svelte';
+
+  let selectedNames = [];
+  let groupName = '';
+
+  onMount(() => {
+    selectedNames = JSON.parse(localStorage.getItem('selectedNames')) || [];
+    groupName = localStorage.getItem('groupName') || '';
+  });
 
     function handleGroupClick() {
-        goto("whatsApp_Chat/next-page");
+        localStorage.setItem('selectedNames', JSON.stringify(selectedNames));
+        window.location.href = '/whatsApp_Chat/next-page';
+        // goto("whatsApp_Chat/next-page");
     }
 </script>
 
@@ -45,7 +56,7 @@
         />
         <div class="flex-1 relative" on:click={handleGroupClick}>
             <div class="flex justify-between">
-                <h2 class="text-lg font-semibold">Timechain Labs</h2>
+                <h2 class="text-lg font-semibold">{groupName}</h2>
                 <div class="flex flex-col items-end">
                     <span class="text-gray-500 text-sm">Today</span>
                     <span

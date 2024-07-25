@@ -6,10 +6,6 @@
     let selectedCountry = "IN"; // Default to India
 
     function handleSubmit() {
-        console.log("handleSubmit called");
-        console.log("userName:", userName);
-        console.log("phoneNumber:", phoneNumber);
-
         if (!userName.trim() || !phoneNumber.toString().trim()) {
             alert("Please fill out both name and phone number.");
             return;

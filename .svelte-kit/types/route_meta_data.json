@@ -1,7 +1,12 @@
 {
 	"/": [],
+	"/choose_contact": [],
+	"/contract_detail": [],
+	"/create_group": [],
 	"/login": [],
 	"/login/otp": [],
+	"/select_contract": [],
+	"/slider": [],
 	"/whatsApp_Chat": [],
 	"/whatsApp_Chat/next-page": []
 }

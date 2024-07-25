@@ -78,7 +78,7 @@
         <span class="dot"></span>
         <span class="dot active"></span>
       </div>
-      <button class="btn" on:click={createGroup}>CREATE GROUP</button>
+      <button class="btn btn1" on:click={createGroup}>CREATE GROUP</button>
       <button class="btn btn-light" on:click={prevSlide}>PREVIOUS</button>
     </div>
   </div>
@@ -112,11 +112,12 @@
   .slide-title {
     font-size: 1.25rem; /* Reduced font size */
     margin-top: 0.75rem; /* Reduced margin */
-    color: #333;
+    color: black;
+    font-weight: bold;
   }
 
   .slide-text {
-    font-size: 0.875rem; /* Reduced font size */
+    font-size: 1rem; /* Reduced font size */
     margin-top: 0.5rem;
     color: #666;
   }
@@ -144,13 +145,18 @@
   .btn {
     padding: 8px 16px; /* Reduced padding */
     margin: 0.5rem 3px; /* Reduced margin */
-    font-size: 0.875rem; /* Smaller font size */
-    background-color: #007bff;
-    color: white;
+    font-size: 1.5rem; /* Smaller font size */
+    font-weight: bold;
+    color: customBlue;
     border: none;
     border-radius: 4px; /* Slightly smaller border radius */
     cursor: pointer;
     transition: background-color 0.3s ease;
+  }
+
+  .btn1{
+    background-color: customBlue;
+    color: darkSkyBlue;
   }
 
   .btn:hover {
@@ -158,11 +164,17 @@
   }
 
   .btn-light {
-    background-color: #f8f9fa;
-    color: #007bff;
+    font-size: 1.5rem; /* Smaller font size */
+    font-weight: bold;
+    color: customBlue;
   }
 
   .btn-light:hover {
     background-color: #e2e6ea;
+  }
+
+  .welcome{
+    font-size: 25px;
+    width: 100%;
   }
 </style>

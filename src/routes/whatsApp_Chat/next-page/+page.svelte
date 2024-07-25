@@ -1,5 +1,14 @@
 <script>
   import { goto } from "$app/navigation";
+  import { onMount } from 'svelte';
+
+  let selectedNames = [];
+  let namesString = '';
+
+  onMount(() => {
+    selectedNames = JSON.parse(localStorage.getItem('selectedNames')) || [];
+    namesString = selectedNames.join(', ');
+  });
 
 function handleClick() {
     goto("/whatsApp_Chat");
@@ -38,7 +47,8 @@ function handleViewContact(){
       <div class="flex flex-col">
         <h2 class="text-lg font-semibold">Timechain Labs</h2>
         <p class="text-gray-500">
-          Aakanksha,Ritabrata,Harsh,Rohan Sharan,+91 6386...
+          <!-- Aakanksha,Ritabrata,Harsh,Rohan Sharan,+91 6386... -->
+          {namesString}
         </p>
       </div>
     </div>

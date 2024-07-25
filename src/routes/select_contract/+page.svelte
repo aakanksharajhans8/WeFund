@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
 
   let selectedOptions = [];
@@ -26,7 +25,7 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: auto;
   height: 162vh;
   /* background-color: #f0f4f8;*/
 } 
@@ -60,7 +59,7 @@
 
 <div class="container">
 <div class="form-box">
-  <h1 class="text-2xl font-bold mb-4">Select Contract</h1>
+  <h1 class="text-2xl font-bold mb-4 text-center">Select Contract</h1>
   <form on:submit={handleSubmit} class="space-y-4">
     <div class="box">
       <input type="checkbox" id="housing-association" name="options" value="Housing Association" class="checkbox">

@@ -28,7 +28,8 @@
   .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: auto;
+    /* align-items: center; */
     height: 200vh;
     /* background-color: #f0f4f8; */
   }

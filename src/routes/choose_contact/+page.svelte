@@ -2,22 +2,21 @@
     let names = [
       'Ritabrata Roy Choudhury',
       'Aakanksha Rajhans',
-      'Harsh Nayak',
       'Rohan Sharan',
       'Rebecca Falcao',
       'Priyansh Jain',
       'Okonkwo Joshua',
       'Santosh',
-    //   'Paul Pogba',
+      'Paul Pogba',
     //   'Anil Kumble'
     ];
   
     let selectedNames = [];
   
     function handleNext() {
-            localStorage.setItem('selectedContacts', JSON.stringify(selectedNames));
-            window.location.href = '/create_group';
-        }
+      localStorage.setItem('selectedContacts', JSON.stringify(selectedNames));
+      window.location.href = '/create_group';
+    }
   </script>
  <style>
     .form-box {
@@ -33,7 +32,8 @@
     .container {
       display: flex;
       justify-content: center;
-      align-items: center;
+      margin: auto;
+      /* align-items: center; */
       height: 110vh;
       /* background-color: #f0f4f8; */
     }
@@ -65,7 +65,7 @@
    
   <div class="container">
     <div class="form-box">
-        <h1 class="text-2xl font-bold mb-4">Select Contract</h1>
+        <h1 class="text-2xl font-bold mb-4 text-center">Select Contract</h1>
       <ul>
         {#each names as name}
           <li>

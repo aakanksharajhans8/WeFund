@@ -35,12 +35,18 @@
   }
 
   function handleConfirm() {
-    showVerified = true;
+    if (otp.some(digit => digit.trim() === '')) {
+      alert("Please fill out OTP.");
+      return;
+    } 
+    else{
+      showVerified = true;
+    }
   }
 
   function handleContinue() {
-    showVerified = false
-    goto(`/select_contract`);
+      showVerified = false;
+      goto(`/select_contract`);
   }
 </script>
 
@@ -130,17 +136,16 @@
   }
 
   .page-wrapper {
-        content: "";
-        background-image: url("/images/bg.png");
-        background-size: cover; /* Cover the entire background */
-        background-position: center; /* Center the image */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        padding: 60px;
-    }
-
+    content: "";
+    background-image: url("/images/bg.png");
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding: 60px;
+  }
 </style>
