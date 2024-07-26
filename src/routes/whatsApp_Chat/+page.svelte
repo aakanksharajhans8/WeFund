@@ -12,6 +12,7 @@
 
     function handleGroupClick() {
         localStorage.setItem('selectedNames', JSON.stringify(selectedNames));
+        localStorage.setItem("groupName", groupName);
         window.location.href = '/whatsApp_Chat/next-page';
         // goto("whatsApp_Chat/next-page");
     }

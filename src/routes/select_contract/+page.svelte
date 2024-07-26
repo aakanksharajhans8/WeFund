@@ -27,7 +27,8 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-6 mr-2 cursor-pointer bold-pointer"
+        class="size-6 mr-2 mt-3"
+        style="width: 48px; height: 48px;"
         on:click={handleClick}
       >
         <path

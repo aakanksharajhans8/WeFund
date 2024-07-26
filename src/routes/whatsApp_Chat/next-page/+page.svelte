@@ -1,22 +1,24 @@
 <script>
   import { goto } from "$app/navigation";
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
   let selectedNames = [];
-  let namesString = '';
+  let namesString = "";
+  let groupName = "";
 
   onMount(() => {
-    selectedNames = JSON.parse(localStorage.getItem('selectedNames')) || [];
-    namesString = selectedNames.join(', ');
+    selectedNames = JSON.parse(localStorage.getItem("selectedNames")) || [];
+    namesString = selectedNames.join(", ");
+    groupName = localStorage.getItem("groupName") || "";
   });
 
-function handleClick() {
+  function handleClick() {
     goto("/whatsApp_Chat");
-}
+  }
 
-function handleViewContact(){
-  goto("/contract_detail");
-}
+  function handleViewContact() {
+    goto("/contract_detail");
+  }
 </script>
 
 <div class="content-container">
@@ -29,6 +31,7 @@ function handleViewContact(){
         stroke-width="1.5"
         stroke="currentColor"
         class="size-6 mt-3 mr-2"
+        style="width: 48px; height: 48px;"
         on:click={handleClick}
       >
         <path
@@ -45,7 +48,7 @@ function handleViewContact(){
       />
 
       <div class="flex flex-col">
-        <h2 class="text-lg font-semibold">Timechain Labs</h2>
+        <h2 class="text-lg font-semibold">{groupName}</h2>
         <p class="text-gray-500">
           <!-- Aakanksha,Ritabrata,Harsh,Rohan Sharan,+91 6386... -->
           {namesString}
@@ -72,10 +75,11 @@ function handleViewContact(){
   </div>
   <div class="addText">
     <p>Today</p>
-    <p>You created Timechain Labs</p>
-    <p>You added +91 38082 10524</p>
-    <p>You added +91 38082 10524</p>
-    <p>You added +91 38082 10524</p>
+    <p>You created {groupName}</p>
+    <!-- <p>You added +91 38082 10524</p> -->
+    {#each selectedNames as name}
+      <p>You added {name}</p>
+    {/each}
   </div>
 
   <div class="addContractText">
@@ -170,6 +174,23 @@ function handleViewContact(){
     </div>
   </div>
 </div>
+<div class="bottom-div">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2.5"
+    stroke="currentColor"
+    class="size-6 mt-3 mr-2"
+    style="width: 48px; height: 48px;"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M12 4.5v15m7.5-7.5h-15"
+    />
+  </svg>
+</div>
 
 <style>
   .chat-container {
@@ -216,9 +237,9 @@ function handleViewContact(){
     flex-direction: column;
     align-items: end;
   }
-  
+
   .miniDiv1,
- .button  {
+  .button {
     background-color: rgb(236, 232, 232);
     display: inline-block;
     margin: 9px;
@@ -228,7 +249,7 @@ function handleViewContact(){
     text-align: center;
   }
 
-  .contractButton{
+  .contractButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,5 +261,12 @@ function handleViewContact(){
     justify-content: end;
     align-self: flex-end;
     font-size: 10px;
+  }
+
+  .bottom-div {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    margin-bottom: 12px;
   }
 </style>
