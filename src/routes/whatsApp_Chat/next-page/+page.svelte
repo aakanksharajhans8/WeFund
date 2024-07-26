@@ -329,7 +329,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 125vh;
+    max-width: 75vh;
     margin-top: auto;
   }
   .inputBox {
