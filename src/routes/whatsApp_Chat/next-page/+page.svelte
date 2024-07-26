@@ -319,7 +319,7 @@
     bottom: 0;
     display: flex;
     margin-bottom: 12px;
-    padding-left: 37px;
+    /* padding-left: 37px; */
     border-top: 2px solid rgb(249, 246, 246);
     width: 100%;
   }
@@ -336,9 +336,9 @@
     border-radius: 100px;
     background-color: rgb(236, 232, 232);
     height: 70px;
-    width: 125vh;
+    width: 75vh;
     margin-top: auto;
-    padding-left: 67px;
+    /* padding-left: 67px; */
     font-size: 2rem;
   }
   .svg-icon {
