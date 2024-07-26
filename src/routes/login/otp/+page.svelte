@@ -46,7 +46,7 @@
 
   function handleContinue() {
     showVerified = false
-    goto(`/select_contract`);
+    window.location.href = '/select_contract';
   }
 </script>
 
