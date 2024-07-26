@@ -230,7 +230,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="svg-icon ml-[90%] mt-[10px]"
+      class="svg-icon ml-[92%] mt-[10px]"
       style="width: 50px; height: 50px;"
     >
       <path
@@ -327,32 +327,29 @@
     position: relative;
     display: flex;
     align-items: center;
-    /* width: 100%; */
-    width: 75vh;
-    /* max-width: 75vh; */
+    width: 95%;
     margin-top: auto;
   }
   .inputBox {
     border-radius: 100px;
     background-color: rgb(236, 232, 232);
     height: 70px;
-    width: 75vh;
+    width: 95%;
     margin-top: auto;
-    /* padding-left: 67px; */
     font-size: 2rem;
   }
   .svg-icon {
     position: absolute;
-    height: 48px; /* Adjust size as needed */
-    width: 48px; /* Adjust size as needed */
+    height: 48px;
+    width: 48px;
     cursor: pointer;
   }
 
   .start-icon {
-    left: 10px; /* Adjust as needed */
+    left: 1%;
   }
 
   .end-icon {
-    right: 10px; /* Adjust as needed */
+    right: 6%
   }
 </style>
