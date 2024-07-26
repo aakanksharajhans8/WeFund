@@ -1,8 +1,21 @@
 <script>
   import { page } from "$app/stores";
+  import { writable } from "svelte/store";
+  import { onMount } from "svelte";
   import { goto } from "$app/navigation";
 
-  // Sample data for dropdown menus (replace with your actual data)
+  // Initialize writable store for form data
+  const formData = writable({
+    selectedContact: '',
+    typeOfSplits: '',
+    paymentFrequency: '',
+    contributionAmount: '',
+    startDate: '',
+    endDate: '',
+    milestones: []
+  });
+
+  // Sample data for dropdown options
   const dropdownOptions1 = [
     "Percentage Based",
     "Amount Based",
@@ -20,18 +33,52 @@
     "On Wish",
   ];
 
-  // State to manage additional text inputs
-  let additionalInputs = [];
+  // On component mount, load data from localStorage if available
+  onMount(() => {
+    const storedData = localStorage.getItem("contractData");
+    if (storedData) {
+      formData.set(JSON.parse(storedData));
+    }
+  });
 
+  // Save form data to localStorage whenever it changes
+  $: saveFormData = () => {
+    localStorage.setItem("contractData", JSON.stringify($formData));
+  };
+
+  // Handle form submission and navigate to another page
   function handleCreateContract() {
+    saveFormData(); // Ensure data is saved before navigating
     goto("/slider");
+  }
+
+  // Add a new milestone input field
+  function addMilestone() {
+    formData.update(data => {
+      data.milestones.push({ title: '', description: '' });
+      return data;
+    });
+  }
+
+  // Reset form data and clear localStorage
+  function resetFormData() {
+    formData.set({
+      selectedContact: '',
+      typeOfSplits: '',
+      paymentFrequency: '',
+      contributionAmount: '',
+      startDate: '',
+      endDate: '',
+      milestones: []
+    });
+    localStorage.removeItem("contractData"); // Optional: Clear stored data
   }
 </script>
 
 <div class="container">
   <div class="form-box">
     <div class="flex items-center justify-start mb-4">
-      <svg
+    <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -64,7 +111,7 @@
     <form on:submit|preventDefault={handleCreateContract}>
       <div class="mb-4">
         <label for="dropdown1">Type of Splits:</label>
-        <select id="dropdown1" name="dropdown1" class="shadow-input">
+        <select id="dropdown1" name="dropdown1" class="shadow-input" bind:value={$formData.typeOfSplits}>
           <option value="" disabled selected>Choose option</option>
           {#each dropdownOptions1 as option}
             <option value={option}>{option}</option>
@@ -74,7 +121,7 @@
 
       <div class="mb-4">
         <label for="dropdown2">Payment Frequency:</label>
-        <select id="dropdown2" name="dropdown2" class="shadow-input">
+        <select id="dropdown2" name="dropdown2" class="shadow-input" bind:value={$formData.paymentFrequency}>
           <option value="" disabled selected>Choose option</option>
           {#each dropdownOptions2 as option}
             <option value={option}>{option}</option>
@@ -92,56 +139,63 @@
             name="textInput"
             class="shadow-input"
             placeholder="Amount"
+            bind:value={$formData.contributionAmount}
           />
         </div>
       </div>
 
       <div class="mb-4">
         <label for="date1">Start Date:</label>
-        <input type="date" id="date1" name="date1" class="shadow-input" />
+        <input type="date" id="date1" name="date1" class="shadow-input" bind:value={$formData.startDate} />
       </div>
 
       <div class="mb-4">
         <label for="date2">End Date:</label>
-        <input type="date" id="date2" name="date2" class="shadow-input" />
+        <input type="date" id="date2" name="date2" class="shadow-input" bind:value={$formData.endDate} />
       </div>
 
       <div class="mb-4 milestone-container">
         <label for="milestone">Create Milestone</label>
         <button
           type="button"
-          on:click={() =>
-            (additionalInputs = [
-              ...additionalInputs,
-              additionalInputs.length + 1,
-            ])}
+          on:click={addMilestone}
           class="px-2 py-1 bg-blue-900 text-blue-100 rounded hover:bg-blue-400 hover:text-white"
           >+</button
         >
       </div>
 
-      {#each additionalInputs as index}
+      {#each $formData.milestones as milestone, index}
         <div class="mb-4">
-          <label>Milestone {index}</label><br />
-          <label for="milestone-name">Milestone Title</label>
+          <label>Milestone {index + 1}</label><br />
+          <label for={`milestone-title-${index}`}>Milestone Title</label>
           <input
             type="text"
             placeholder="Milestone Title"
             class="shadow-input mb-2"
+            bind:value={milestone.title}
+            id={`milestone-title-${index}`}
           />
-          <label for="milestone-desc">Description</label>
-          <textarea placeholder="Description" class="shadow-input"></textarea>
+          <label for={`milestone-desc-${index}`}>Description</label>
+          <textarea
+            placeholder="Description"
+            class="shadow-input"
+            bind:value={milestone.description}
+            id={`milestone-desc-${index}`}
+          ></textarea>
         </div>
       {/each}
-
-      <p class="font-bold">Voting & Decisions</p>
-
+       <p class="font-bold">Voting & Decisions</p>
       <div class="button-group">
         <button
           type="submit"
           class="mt-4 px-4 py-2 bg-blue-900 text-blue-100 rounded hover:bg-blue-400 hover:text-white full-width-button"
           >Create Contract</button
         >
+        <button
+          type="button"
+          on:click={resetFormData}
+          class="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-400"
+          >Reset</button>
       </div>
     </form>
   </div>
