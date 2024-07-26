@@ -29,6 +29,7 @@
   }
 </script>
 
+
 <div class="slider-container">
   <div class="slider" style="transform: translateX(-{currentIndex * 100}%)">
     <div class="slide">
@@ -45,7 +46,8 @@
         <span class="dot"></span>
         <span class="dot"></span>
       </div>
-      <button class="btn" on:click={nextSlide}>NEXT</button>
+      <button class="btn btn-light" on:click={nextSlide}>NEXT</button>
+      <button class="btn btn1" on:click={createGroup}>CREATE GROUP</button>
     </div>
     <div class="slide">
       <div class="welcome">
@@ -61,8 +63,9 @@
         <span class="dot active"></span>
         <span class="dot"></span>
       </div>
-      <button class="btn" on:click={nextSlide}>NEXT</button>
+      <button class="btn btn-light" on:click={nextSlide}>NEXT</button>
       <button class="btn btn-light" on:click={prevSlide}>PREVIOUS</button>
+      <button class="btn btn1" on:click={createGroup}>CREATE GROUP</button>
     </div>
     <div class="slide">
       <div class="welcome">
@@ -78,8 +81,8 @@
         <span class="dot"></span>
         <span class="dot active"></span>
       </div>
-      <button class="btn btn1" on:click={createGroup}>CREATE GROUP</button>
       <button class="btn btn-light" on:click={prevSlide}>PREVIOUS</button>
+      <button class="btn btn1" on:click={createGroup}>CREATE GROUP</button>
     </div>
   </div>
 </div>
@@ -155,13 +158,10 @@
   }
 
   .btn1{
-    background-color: customBlue;
-    color: darkSkyBlue;
+    background-color: rgba(17, 45, 68, 1);
+    color: #0092ca;
   }
 
-  .btn:hover {
-    background-color: #0056b3;
-  }
 
   .btn-light {
     font-size: 1.5rem; /* Smaller font size */
