@@ -315,37 +315,38 @@
   }
 
   .bottom-div {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px; /* Add padding for responsiveness */
-  border-top: 2px solid rgb(249, 246, 246);
-  width: 100%;
-}
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    margin-bottom: 12px;
+    border-top: 2px solid rgb(249, 246, 246);
+    width: 100%;
+  }
 
-.input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: calc(100% - 80px); /* Adjust for icons on both sides */
-  max-width: none; /* Remove max-width restriction */
-}
-
-.inputBox {
-  border-radius: 100px;
-  background-color: rgb(236, 232, 232);
-  height: 70px;
-  width: 100%; /* Adjust to take available width */
-  font-size: 2rem;
-}
-
-.svg-icon {
-  height: 48px; /* Adjust size as needed */
-  width: 48px; /* Adjust size as needed */
-}
-
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    width: 75vh;
+    /* max-width: 75vh; */
+    margin-top: auto;
+  }
+  .inputBox {
+    border-radius: 100px;
+    background-color: rgb(236, 232, 232);
+    height: 70px;
+    width: 75vh;
+    margin-top: auto;
+    /* padding-left: 67px; */
+    font-size: 2rem;
+  }
+  .svg-icon {
+    position: absolute;
+    height: 48px; /* Adjust size as needed */
+    width: 48px; /* Adjust size as needed */
+    cursor: pointer;
+  }
 
   .start-icon {
     left: 10px; /* Adjust as needed */
