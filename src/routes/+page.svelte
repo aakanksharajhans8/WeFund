@@ -1,52 +1,34 @@
-<!-- <script>
-  // import MainPage from './login/page.svelte';
-  import './login/+page.svelte';
-</script>
-    
-  <page /> -->
-
 <script>
   import { goto } from "$app/navigation";
+  import { onMount } from "svelte";
 
-  function handleClick() {
+  onMount(() => {
     try {
-      goto("/login");
+      setTimeout(() => {
+        goto("/login");
+      }, 2000); // 2000 milliseconds = 2 seconds
     } catch (error) {
       console.error("Navigation error:", error);
     }
-  }
+  });
 </script>
-<div class="flex items-center justify-center h-screen flex-col">
+<div class="flex items-center justify-center flex-col h-screen">
   <div class="text-center mb-4">
-    <img src="/images/Logo.png" alt="logo" class="max-w-xs mx-auto" />
-  </div>
-  <div>
-    <button on:click={handleClick} class="styled-button">Get Started</button>
+    <img src="/images/Logo.png" alt="logo" class="max-w-xs mx-auto h-[105px] fade-in" />
   </div>
 </div>
 
 <style>
-  .styled-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .fade-in {
+    animation: fadeIn 2s ease-in-out;
   }
 
-  .styled-button:hover {
-    background-color: #0056b3;
-  }
-
-  .styled-button:active {
-    background-color: #004085;
-  }
-
-  .styled-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 </style>
