@@ -162,6 +162,11 @@
     color: #0092ca;
   }
 
+  .btn1:hover{
+    background-color: #1E3A8A;
+    color: #DCEEFB;
+  }
+
 
   .btn-light {
     font-size: 1.5rem; /* Smaller font size */

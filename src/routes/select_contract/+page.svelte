@@ -151,11 +151,11 @@
       <div class="button-group">
         <button
           type="button"
-          class="mt-4 px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
+          class="mt-4 px-4 py-2 bg-navyblue text-skyblue rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
         >Customize</button>
         <button
           type="submit"
-          class="mt-4 px-4 py-2 bg-blue-900 text-blue-100 rounded hover:bg-blue-400 hover:text-white full-width-button"
+          class="mt-4 px-4 py-2 bg-navyblue text-skyblue rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
         >Continue</button>
       </div>
     </form>

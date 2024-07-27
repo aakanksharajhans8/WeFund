@@ -42,7 +42,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="size-6 mr-2 mt-3"
+        class="size-6 mr-2"
         style="width: 48px; height: 48px;"
         on:click={handleClick}
       >
@@ -53,7 +53,7 @@
         />
       </svg>
 
-      <h1 class="text-2xl font-bold mb-4 text-center">Create Group</h1>
+      <h1 class="text-2xl font-bold mb-4 text-center ">Create Group</h1>
     </div>
     <div class="flex justify-center mb-4">
       <img src={groupPfp} alt="Group Profile Picture" />
@@ -84,7 +84,7 @@
     </ul>
     <button
       type="submit"
-      class="mt-4 px-4 py-2 bg-blue-900 text-blue-100 rounded hover:bg-blue-400 hover:text-white full-width-button"
+      class="mt-4 px-4 py-2 bg-navyblue text-skyblue rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
       on:click={createGroup}>Create Group</button
     >
   </div>
