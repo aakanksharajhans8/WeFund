@@ -16,6 +16,17 @@
     goto("/whatsApp_Chat");
   }
 
+  let showButtons = false;
+
+  function threeDots(){
+    showButtons= !showButtons;
+  }
+
+  let plus= false;
+  function plusSign(){
+    plus= !plus;
+  }
+
   function handleViewContact() {
     goto("/contract_detail");
   }
@@ -65,6 +76,7 @@
         stroke="currentColor"
         class="size-6"
         style="width: 50px; height: 50px;"
+        on:click={threeDots}
       >
         <path
           stroke-linecap="round"
@@ -72,6 +84,17 @@
           d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
         />
       </svg>
+
+      {#if showButtons}
+  <div class="button-group1">
+    <!-- <button on:click={button1Function}>Button 1</button> -->
+    <button>View Poles</button>
+    <button>View Milestones</button>
+    <button>View Contracts</button>
+    <button>View Amendments</button>
+  </div>
+{/if}
+
     </div>
   </div>
 
@@ -185,6 +208,7 @@
       stroke="currentColor"
       class="size-6 mt-3 mr-2"
       style="width: 48px; height: 48px;"
+      on:click={plusSign}
     >
       <path
         stroke-linecap="round"
@@ -192,6 +216,28 @@
         d="M12 4.5v15m7.5-7.5h-15"
       />
     </svg>
+
+    {#if plus}
+  <div class="button-group2">
+    <!-- <button on:click={button1Function}>Button 1</button> -->
+    <button class="mile">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+      </svg>
+      Create Pole</button>
+    <button class="mile">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+      </svg>
+      Create Milestones</button>
+    <button class="mile">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+      </svg>      
+      Create Amendments</button>
+    <button on:click={plusSign}>Cancel</button>
+  </div>
+{/if}
     <div class="input-container">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -266,6 +312,10 @@
     opacity: 0.03;
   }
 
+  .content-container{
+    font-size: 1.5rem;
+  }
+
   .addText {
     display: flex;
     flex-direction: column; /* Stack children vertically */
@@ -273,7 +323,8 @@
   }
 
   .addText p {
-    background-color: rgb(236, 232, 232);
+    /* background-color: rgb(236, 232, 232); */
+    background-color: #f0f0f0;
     display: inline-block;
     margin: 9px;
     padding: 9px 15px;
@@ -291,7 +342,8 @@
 
   .miniDiv1,
   .button {
-    background-color: rgb(236, 232, 232);
+    /* background-color: rgb(236, 232, 232); */
+    background-color: #f0f0f0;
     display: inline-block;
     margin: 9px;
     padding: 15px;
@@ -332,7 +384,10 @@
   }
   .inputBox {
     border-radius: 100px;
-    background-color: rgb(236, 232, 232);
+    /* background-color: rgb(236, 232, 232); */
+    background-color: #f0f0f0;
+    padding-left: 10%;
+    font-size: 2rem;
     height: 70px;
     width: 95%;
     margin-top: auto;
@@ -352,4 +407,52 @@
   .end-icon {
     right: 6%
   }
+
+  /* THREEDOTS */
+  .button-group1 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Adjust based on your layout */
+  right: 20px; /* Adjust based on your layout */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-group2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 150%; /* Adjust based on your layout */
+  left: 20px; /* Adjust based on your layout */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-group1 button, .button-group2 button {
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.button-group1 button:hover, .button-group2 button:hover {
+  background-color: #f0f0f0;
+}
+
+.mile{
+  display: flex;
+}
+.mile svg{
+  margin-right: 16px;
+  margin-top: 5px;
+}
+
+
 </style>
