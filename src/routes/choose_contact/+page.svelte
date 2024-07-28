@@ -33,73 +33,102 @@
 </script>
 
 <style>
-  .form-box {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent box */
-    padding: 2rem;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 500px; /* Increase the size of the box */
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    height: 120vh;
-  }
-  .checkbox {
-    transform: scale(2);
-    margin-left: 1rem; /* Adjust spacing from the text */
-  }
-  .full-width-button {
-    width: 100%;
-  }
-  .button-group {
-    display: flex;
-    flex-direction: row; /* Change direction to row for horizontal layout */
-    gap: 1rem;
-  }
-  li {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    padding: 8px;
-    border: 2px solid #82b5e7; /* Blue border with 2px width */
-    border-radius: 8px; /* Rounded corners for the border */
-    margin-bottom: 8px; /* Space between list items */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  }
-  label {
-    padding-left: 80px;
-  }
-  .search-bar {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 2px solid #82b5e7;
-    border-radius: 8px;
-  }
+  .search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #82b5e7;
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1px;
+}
+
+.search-container i {
+  margin-right: 10px;
+  color: #888;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.form-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 120vh;
+}
+
+.checkbox {
+  transform: scale(2);
+  margin-left: 1rem;
+}
+
+.full-width-button {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 2px solid #82b5e7;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  padding-left: 80px;
+}
+
+
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="container">
   <div class="form-box">
     <h1 class="text-2xl font-bold mb-4 text-center">Select Contact</h1>
+
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        class="search-bar"
+        placeholder="Search contacts..."
+        oninput="filterNames()"
+        id="searchInput"
+      />
+    </div>
+
     <button
       type="button"
       class="mt-4 px-4 py-2 bg-navyblue text-skyblue rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
-      on:click={handleNext}
+      onclick="handleNext()"
     >
       Create Group
     </button>
-    <input
-      type="text"
-      class="search-bar"
-      placeholder="Search contacts..."
-      oninput="filterNames()"
-      id="searchInput"
-    />
+
     <ul>
       {#each names as name}
         <li>
@@ -116,3 +145,4 @@
     
   </div>
 </div>
+

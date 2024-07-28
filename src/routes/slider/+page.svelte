@@ -160,6 +160,7 @@
   .btn1{
     background-color: rgba(17, 45, 68, 1);
     color: #0092ca;
+    width: 100%;
   }
 
   .btn1:hover{
