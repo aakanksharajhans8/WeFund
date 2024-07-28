@@ -124,7 +124,7 @@ label {
     <button
       type="button"
       class="mt-4 px-4 py-2 bg-navyblue text-skyblue rounded hover:bg-blue-900 hover:text-blue-100 full-width-button"
-      onclick="handleNext()"
+      on:click={handleNext}
     >
       Create Group
     </button>
