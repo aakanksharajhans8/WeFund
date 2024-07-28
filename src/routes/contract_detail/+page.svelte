@@ -96,7 +96,7 @@
       <h1 class="text-2xl font-bold mb-4 header text-center">Contract Details</h1>
     </div>
     <div class="contact-box">
-      <h3 class="text-xl font-bold mb-2">Selected Contacts</h3>
+      <h3 class="text-xl font-bold mb-2">Selected Contracts</h3>
       {#if $page.url.searchParams.has("options")}
         <ul>
           {#each $page.url.searchParams.get("options").split(",") as option}
