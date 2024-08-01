@@ -48,7 +48,7 @@
     </div>
 </div>
 <!-- Groups List -->
-<div class="flex flex-col p-4">
+<div class=" class2 flex flex-col p-4">
     <div class="flex items-center p-4">
         <img
             src="/images/group-icon.jpg"
@@ -61,7 +61,7 @@
                 <div class="flex flex-col items-end">
                     <span class="text-gray-500 text-sm">Today</span>
                     <span
-                        class="absolute top-6 right-0 flex items-center justify-center h-6 w-6 text-xs font-bold text-customBlue bg-sky-500 rounded-full"
+                        class="class1 ml-2 absolute top-6 right-0 flex items-center justify-center h-6 w-6 text-xs font-bold text-customBlue bg-sky-500 rounded-full"
                         >2</span
                     >
                 </div>
@@ -96,7 +96,7 @@
                     ></path>
                 </svg>
                 <!-- Text -->
-                <p class="text-gray-500 text-sm ml-2">
+                <p class="text-gray-500 text-sm ml-2 mr-2">
                     Aakanksha added +91 12345 89...
                 </p>
             </div>
@@ -125,4 +125,13 @@
 </div>
 
 <style>
+    @media only screen and (max-width: 400px){
+        .class1{
+            height: 1rem;
+            width: 1rem;
+        }
+        .class2{
+            padding: 0.5rem;
+        }
+    }
 </style>

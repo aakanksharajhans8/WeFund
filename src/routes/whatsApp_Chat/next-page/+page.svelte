@@ -75,7 +75,7 @@
         stroke-width="1.5"
         stroke="currentColor"
         class="size-6"
-        style="width: 50px; height: 50px;"
+        style="width: 30px; height: 30px;"
         on:click={threeDots}
       >
         <path
@@ -206,8 +206,8 @@
       viewBox="0 0 24 24"
       stroke-width="2.5"
       stroke="currentColor"
-      class="size-6 mt-3 mr-2"
-      style="width: 48px; height: 48px;"
+      class="size-6 mt-[12px] mr-2"
+      style="width: 30px; height: 30px;"
       on:click={plusSign}
     >
       <path
@@ -276,8 +276,8 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="svg-icon ml-[92%] mt-[10px]"
-      style="width: 50px; height: 50px;"
+      class="svg-icon ml-[92%] mt-[12px]"
+      style="width: 30px; height: 30px;"
     >
       <path
         stroke-linecap="round"
@@ -310,10 +310,6 @@
     height: 100vh;
     z-index: -10;
     opacity: 0.03;
-  }
-
-  .content-container{
-    font-size: 1.5rem;
   }
 
   .addText {
@@ -367,7 +363,6 @@
   }
 
   .bottom-div {
-    position: absolute;
     bottom: 0;
     display: flex;
     margin-bottom: 12px;
@@ -388,15 +383,15 @@
     background-color: #f0f0f0;
     padding-left: 10%;
     font-size: 2rem;
-    height: 70px;
+    height: 55px;
     width: 95%;
     margin-top: auto;
     font-size: 2rem;
   }
   .svg-icon {
     position: absolute;
-    height: 48px;
-    width: 48px;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
   }
 
@@ -453,6 +448,5 @@
   margin-right: 16px;
   margin-top: 5px;
 }
-
 
 </style>

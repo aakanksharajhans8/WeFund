@@ -35,7 +35,7 @@
         <img src="/images/Logo.png" alt="logo" class="max-w-xs" />
     </div>
 
-    <div class="text-center mb-8 top-155px left-57.5px gap-8px">
+    <div class=" class1 text-center mb-8 top-155px left-57.5px gap-8px">
         <h2 class="text-2xl font-bold mb-4">WELCOME TO WEFUND</h2>
         <p class="text-lg max-w-md mx-auto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
@@ -44,7 +44,7 @@
     </div>
 
     <div
-        class="max-w-md flex flex-col mx-auto p-6 text-center top-250px left-20px gap-100px"
+        class="class2 max-w-md flex flex-col mx-auto p-6 text-center top-250px left-20px gap-100px"
     >
         <div>
             <label for="name" class="block text-justify">Name</label>
@@ -115,5 +115,30 @@
         height: 100%;
         z-index: -1;
         padding: 60px;
+    }
+    @media only screen and (max-height: 600px){
+        .page-wrapper {
+            margin: 0px;
+            padding: 10px;
+            /* font-size: 0.5rem; */
+        }
+        h2, p{
+            font-size: 1rem;
+        }
+
+        .class1{
+            margin-bottom: 0px;
+        }
+
+        button{
+            margin-top: 2rem;
+        }
+    }
+
+    @media only screen and (max-width: 370px){
+        .class2{
+            padding-left: 2px;
+            padding-right: 2px;
+        }
     }
 </style>

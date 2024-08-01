@@ -148,4 +148,17 @@
     z-index: -1;
     padding: 60px;
   }
+
+  @media only screen and (max-height: 600px){
+
+        button{
+            margin-top: 2rem;
+        }
+    }
+    @media only screen and (max-width: 370px){
+        .page-wrapper{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
 </style>
