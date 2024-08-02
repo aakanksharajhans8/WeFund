@@ -365,7 +365,7 @@
   .bottom-div {
     bottom: 0;
     display: flex;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
     border-top: 2px solid rgb(249, 246, 246);
     width: 100%;
   }
